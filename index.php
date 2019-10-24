@@ -1,5 +1,6 @@
 <?php  ?>
 
-<a href="en.php">English</a>
-<a href="fr.php">Français</a>
+<a href="en.html">English</a>
+</br>
+<a href="fr.html">Français</a>
 
