@@ -36,7 +36,8 @@
         <input type="hidden" value="Fr" name="00N3j00000FcYD5" id="00N3j00000FcYD5" >
     
         <label>Prénom</label> <input id="00N3j00000FcYDj" maxlength="80" name="00N3j00000FcYDj" size="20"
-            type="text" required required title="Veuillez saisir votre prénom"/><br>
+            type="text" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" 
+            required title="Veuillez saisir votre prénom"/><br>
     
         <label>Nom</label> <input id="00N3j00000FcYED" maxlength="80" name="00N3j00000FcYED" size="20"
             type="text" required required title="Veuillez saisir votre nom"/><br>
