@@ -3,15 +3,16 @@
 <script>
     function timestamp() {
         var response = document.getElementById("g-recaptcha-response");
-        if (response == null || response.value.trim() == "") { var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value); elems["ts"] = JSON.stringify(new Date().getTime()); document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); }} 
-        
-        setInterval(timestamp, 500);
-    
-        function enableBtn(){
-            document.getElementById("button1").disabled = false;
-           }
+        if (response == null || response.value.trim() == "") { var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value); elems["ts"] = JSON.stringify(new Date().getTime()); document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); }
+    }
 
-    
+    setInterval(timestamp, 500);
+
+    function enableBtn() {
+        document.getElementById("button1").disabled = false;
+    }
+
+
 
 </script>
 <form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
@@ -20,6 +21,8 @@
         value='{"keyname":"mysoljit","fallback":"true","orgId":"00D3j000000hZaE","ts":""}'>
     <input type=hidden name="orgid" value="00D3j000000hZaE">
     <input type=hidden name="retURL" value="http://www.google.ca">
+    <label for="FisrtName">FisrtName</label><input id="FirstName" maxlength="80" name="FirstName" size="20" type="text">
+    <label for="LastName">LastName</label><input id="LastName" maxlength="80" name="LastName" size="20" type="text">
     <label for="description">Description</label><textarea name="description"></textarea><br>
 
     <label for="type">Type</label><select id="type" name="type" required>
@@ -32,16 +35,26 @@
         <option value="Want to be a reviewer">Want to be a reviewer</option>
         <option value="Other">Other</option>
     </select><br>
+    Language:<select  id="00N3j00000FcYD5" name="00N3j00000FcYD5" title="Language"><option value="">--None--</option><option value="En">En</option>
+        <option value="Fr">Fr</option>
+        </select><br>
+        
+        Firstname:<input  id="00N3j00000FcYDj" maxlength="80" name="00N3j00000FcYDj" size="20" type="text" /><br>
+        
+        Lastname:<input  id="00N3j00000FcYED" maxlength="80" name="00N3j00000FcYED" size="20" type="text" /><br>
 
-    <label for="company">Web Company</label><input id="company" maxlength="80" name="company" size="20" type="text" /><br>
+    <label for="company">Web Company</label><input id="company" maxlength="80" name="company" size="20"
+        type="text" /><br>
 
-    <label for="email">Web Email</label><input id="email" maxlength="80" name="email" size="20" type="text" required /><br>
+    <label for="email">Web Email</label><input id="email" maxlength="80" name="email" size="20" type="text"
+        required /><br>
 
     <label for="name">Web Name</label><input id="name" maxlength="80" name="name" size="20" type="text" /><br>
 
     <label for="phone">Web Phone</label><input id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
 
-    <div class="g-recaptcha" data-sitekey="6LduGb8UAAAAACUom0TQ1gm0RbIBdXPfo26Mz364" data-callback="enableBtn"></div><br>
+    <div class="g-recaptcha" data-sitekey="6LduGb8UAAAAACUom0TQ1gm0RbIBdXPfo26Mz364" data-callback="enableBtn"></div>
+    <br>
     <input type="submit" value="Submit" id="button1" disabled>
 
 </form>
