@@ -1,0 +1,59 @@
+<html lang="fr">
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+<script src="https://www.google.com/recaptcha/api.js?hl=fr"></script>
+<script>
+    function timestamp() {
+        var response = document.getElementById("g-recaptcha-response");
+        if (response == null || response.value.trim() == "") { var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value); elems["ts"] = JSON.stringify(new Date().getTime()); document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); }
+    }
+
+    setInterval(timestamp, 500);
+
+    function enableBtn() {
+        document.getElementById("button1").disabled = false;
+    }
+</script>
+<form action="https://chtc-ctlc--pc.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+
+    <input type=hidden name='captcha_settings'
+        value='{"keyname":"mysoljit","fallback":"true","orgId":"00D4c0000008cut","ts":""}'>
+   <input type=hidden name="orgid" value="00D4c0000008cut">
+    <input type=hidden name="retURL" value="https://www.chtc-ctlc.ca/fr/">
+
+    <label for="description">Description</label><textarea name="description"></textarea><br>
+
+    <label for="type">Type</label><select id="type" name="type" required required title="Veuillez choisir un type">
+        <option value="">----</option>
+        <option value="Looking for a service">À la recherche d'un service</option>
+        <option value="Want to publish a service">Offre de service</option>
+        <option value="Looking for funding">À la recherche d'un financement</option>
+        <option value="Account troubleshooting">Problème compte</option>
+        <option value="Want to partner">Partenaire</option>
+        <option value="Want to be a reviewer">Réviseur</option>
+        <option value="Other">Autre</option>
+    </select><br>
+
+    <input type="hidden" value="French" name="00N5X000000Nkce" id="00N5X000000Nkce">
+
+    <label>Prénom</label> <input id="00N3j00000FcYYN" maxlength="80" name="00N3j00000FcYYN" size="20" type="text"
+        required title="Veuillez saisir votre prénom" /><br>
+
+    <label>Nom</label> <input id="00N3j00000FcYYS" maxlength="80" name="00N3j00000FcYYS" size="20" type="text" required
+        required title="Veuillez saisir votre nom" /><br>
+
+
+    <label for="company">Société Web</label><input id="company" maxlength="80" name="company" size="20"
+        type="text" /><br>
+    <label for="email">E-mail Web</label><input id="email" maxlength="80" name="email" size="20" type="email" required
+        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" /><br>
+
+
+    <label for="phone">Téléphone Web</label><input id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+
+    <div class="g-recaptcha" data-sitekey="6LduGb8UAAAAACUom0TQ1gm0RbIBdXPfo26Mz364" data-callback="enableBtn"></div>
+    <br>
+    <input type="submit" value="Envoyer" id="button1" disabled>
+
+</form>
+
+</html>
