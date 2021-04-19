@@ -1,58 +1,57 @@
-<html lang="en">
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
+<!--  If necessary, please modify the charset parameter to specify the        -->
+<!--  character set of your HTML page.                                        -->
+<!--  ----------------------------------------------------------------------  -->
+
 <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
-<script src="https://www.google.com/recaptcha/api.js?hl=en"></script>
-<script>
-    function timestamp() {
-        var response = document.getElementById("g-recaptcha-response");
-        if (response == null || response.value.trim() == "") { var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value); elems["ts"] = JSON.stringify(new Date().getTime()); document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); }
-    }
 
-    setInterval(timestamp, 500);
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: Please add the following <FORM> element to your page.             -->
+<!--  ----------------------------------------------------------------------  -->
 
-    function enableBtn() {
-        document.getElementById("button1").disabled = false;
-    }
-</script>
-<form action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+<form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
 
-    <input type=hidden name='captcha_settings'
-        value='{"keyname":"mysoljit","fallback":"true","orgId":"00D3j000000hZaE","ts":""}'>
-    <input type=hidden name="orgid" value="00D3j000000hZaE">
-    <input type=hidden name="retURL" value="https://www.chtc-ctlc.ca/">
+<input type=hidden name="oid" value="00D7Y000000BE9B">
+<input type=hidden name="retURL" value="http://www.orvea.io">
 
-    <label for="description">Description</label><textarea name="description"></textarea><br>
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+<!--  these lines if you wish to test in debug mode.                          -->
+<!--  <input type="hidden" name="debug" value=1>                              -->
+<!--  <input type="hidden" name="debugEmail" value="ameraga@orvea.io">        -->
+<!--  ----------------------------------------------------------------------  -->
 
-    <label for="type">Type</label><select id="type" name="type" required>
-       
-        <option value="Looking for a service">Looking for a service</option>
-        <option value="Want to publish a service">Want to publish a service</option>
-        <option value="Looking for funding">Looking for funding</option>
-        <option value="Account troubleshooting">Account troubleshooting</option>
-        <option value="Want to partner">Want to partner</option>
-        <option value="Want to be a reviewer">Want to be a reviewer</option>
-        <option value="Other">Other</option>
-    </select><br>
+<label for="first_name">Prénom</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
 
-    <input type=hidden id="00N5X000000Nkce" name="00N5X000000Nkce" value="English">
+<label for="last_name">Nom</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
 
-    <label>First Name</label> <input id="00N3j00000FcYYN" maxlength="80" name="00N3j00000FcYYN" size="20" type="text"
-        required /><br>
+<label for="email">Adresse e-mail</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
 
-    <label>Last Name</label> <input id="00N3j00000FcYYS" maxlength="80" name="00N3j00000FcYYS" size="20" type="text"
-        required /><br>
-    <label for="company">Company</label><input id="company" maxlength="80" name="company" size="20" type="text" /><br>
-    <label for="email">Web Email</label><input id="email" maxlength="80" name="email" size="20" type="email" required
-        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$" /><br>
+<label for="company">Société</label><input  id="company" maxlength="40" name="company" size="20" type="text" /><br>
 
+<label for="city">Ville</label><input  id="city" maxlength="40" name="city" size="20" type="text" /><br>
 
-    <label for="phone">Web Phone</label><input id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+<label for="country_code">Pays</label><select  id="country_code" name="country_code"><option value="">- Aucun -</option><option value="FR">France</option>
+<option value="GB">United Kingdom</option>
+<option value="US">United States</option>
+</select><br>
 
-    <div class="g-recaptcha" data-sitekey="6LduGb8UAAAAACUom0TQ1gm0RbIBdXPfo26Mz364" data-callback="enableBtn"></div>
-    <br>
-    <input type="submit" value="Submit" id="button1" disabled>
+<label for="state_code">Région/Province</label><select  id="state_code" name="state_code"><option value="">- Aucun -</option><option value="44">Alsace-Champagne-Ardenne-Lorraine</option>
+<option value="75">Aquitaine-Limousin-Poitou-Charentes</option>
+<option value="84">Auvergne-Rhône-Alpes</option>
+<option value="27">Bourgogne-Franche-Comté</option>
+<option value="53">Bretagne</option>
+<option value="24">Centre-Val de Loire</option>
+<option value="94">Corse</option>
+<option value="11">Île-de-France</option>
+<option value="76">Languedoc-Roussillon-Midi-Pyrénées</option>
+<option value="32">Nord-Pas-de-Calais-Picardie</option>
+<option value="28">Normandie</option>
+<option value="52">Pays de la Loire</option>
+<option value="93">Provence-Alpes-Côte d&#39;Azur</option>
+</select><br>
+
+<input type="submit" name="submit">
 
 </form>
-
-
-
-</html>
