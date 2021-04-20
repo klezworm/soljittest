@@ -10,9 +10,9 @@
 <!--  NOTE: Please add the following <FORM> element to your page.             -->
 <!--  ----------------------------------------------------------------------  -->
 
-<form action="https://test.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8" method="POST">
+<form action="https://orvea--uniorvea.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
 
-<input type=hidden name="oid" value="00D7Y000000BE9B">
+<input type=hidden name="orgid" value="00D7Y000000BE9B">
 <input type=hidden name="retURL" value="http://www.orvea.io">
 
 <!--  ----------------------------------------------------------------------  -->
@@ -21,36 +21,42 @@
 <!--  <input type="hidden" name="debug" value=1>                              -->
 <!--  <input type="hidden" name="debugEmail" value="ameraga@orvea.io">        -->
 <!--  ----------------------------------------------------------------------  -->
+<label for="recordType">Case Record Type</label><select  id="recordType" name="recordType">
+<option value="0127Y000001tKKa">Simuler le budjet</option>
 
-<label for="first_name">Prénom</label><input  id="first_name" maxlength="40" name="first_name" size="20" type="text" /><br>
+</select><br>
+<input type="hidden" id="origin" name="origin" value="Web" /><br>
+<label for="name">Contact Name</label><input  id="name" maxlength="80" name="name" size="20" type="text" /><br>
 
-<label for="last_name">Nom</label><input  id="last_name" maxlength="80" name="last_name" size="20" type="text" /><br>
+<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
 
-<label for="email">Adresse e-mail</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
+Entreprise:<input  id="00N7Y000008KsG4" maxlength="255" name="00N7Y000008KsG4" size="20" type="text" /><br>
 
-<label for="company">Société</label><input  id="company" maxlength="40" name="company" size="20" type="text" /><br>
-
-<label for="city">Ville</label><input  id="city" maxlength="40" name="city" size="20" type="text" /><br>
-
-<label for="country_code">Pays</label><select  id="country_code" name="country_code"><option value="">- Aucun -</option><option value="FR">France</option>
-<option value="GB">United Kingdom</option>
-<option value="US">United States</option>
+Fonction:<select  id="00N7Y000008KsG9" name="00N7Y000008KsG9" title="Fonction"><option value="">--None--</option><option value="A">A</option>
+<option value="b">b</option>
+<option value="c">c</option>
+<option value="d">d</option>
 </select><br>
 
-<label for="state_code">Région/Province</label><select  id="state_code" name="state_code"><option value="">- Aucun -</option><option value="44">Alsace-Champagne-Ardenne-Lorraine</option>
-<option value="75">Aquitaine-Limousin-Poitou-Charentes</option>
-<option value="84">Auvergne-Rhône-Alpes</option>
-<option value="27">Bourgogne-Franche-Comté</option>
-<option value="53">Bretagne</option>
-<option value="24">Centre-Val de Loire</option>
-<option value="94">Corse</option>
-<option value="11">Île-de-France</option>
-<option value="76">Languedoc-Roussillon-Midi-Pyrénées</option>
-<option value="32">Nord-Pas-de-Calais-Picardie</option>
-<option value="28">Normandie</option>
-<option value="52">Pays de la Loire</option>
-<option value="93">Provence-Alpes-Côte d&#39;Azur</option>
-</select><br>
+<label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
+
+Nom du projet:<input  id="00N7Y000008KsFV" maxlength="255" name="00N7Y000008KsFV" size="20" type="text" /><br>
+
+Cout de construction TCE:<input  id="00N7Y000008KsFz" name="00N7Y000008KsFz" size="20" type="text" /><br>
+
+Ville:<input  id="00N7Y000008KsFf" maxlength="255" name="00N7Y000008KsFf" size="20" type="text" /><br>
+
+Nombre de logements:<input  id="00N7Y000008KsFa" name="00N7Y000008KsFa" size="20" type="text" /><br>
+
+Nombre de chambres:<input  id="00N7Y000008KsFp" name="00N7Y000008KsFp" size="20" type="text" /><br>
+
+Nombre de maison:<input  id="00N7Y000008KsFu" name="00N7Y000008KsFu" size="20" type="text" /><br>
+
+Surface bureau:<input  id="00N7Y000008KsFb" name="00N7Y000008KsFb" size="20" type="text" /><br>
+
+<label for="description">Description</label><textarea name="description"></textarea><br>
+
+<input type="hidden"  id="external" name="external" value="1" /><br>
 
 <input type="submit" name="submit">
 
