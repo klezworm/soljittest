@@ -1,6 +1,4 @@
 <?php  ?>
-
-<a href="OrveaSB.html">Web to lead</a>
+<a href="Simuler le budjet.html">Simuler le budjet</a>
 <br/>
-<a href="web2case.html">Web to case</a>
 
