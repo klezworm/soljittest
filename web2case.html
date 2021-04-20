@@ -4,54 +4,56 @@
 <!--  character set of your HTML page.                                        -->
 <!--  ----------------------------------------------------------------------  -->
 
-<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
 
 <!--  ----------------------------------------------------------------------  -->
 <!--  NOTE: Please add the following <FORM> element to your page.             -->
 <!--  ----------------------------------------------------------------------  -->
 
-<form
-  action="https://orvea--uniorvea.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8"
-  method="POST"
->
-  <input type="hidden" name="orgid" value="00D7Y000000BE9B" />
-  <input type="hidden" name="retURL" value="http://www.orvea.io" />
+<form action="https://orvea--uniorvea.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
 
-  <!--  ----------------------------------------------------------------------  -->
-  <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
-  <!--  these lines if you wish to test in debug mode.                          -->
-  <!--  <input type="hidden" name="debug" value=1>                              -->
-  <!--  <input type="hidden" name="debugEmail" value="ameraga@orvea.io">        -->
-  <!--  ----------------------------------------------------------------------  -->
+<input type=hidden name="orgid" value="00D7Y000000BE9B">
+<input type=hidden name="retURL" value="http://www.orvea.io">
 
-  <label for="name">Nom du contact</label
-  ><input id="name" maxlength="80" name="name" size="20" type="text" /><br />
+<!--  ----------------------------------------------------------------------  -->
+<!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+<!--  these lines if you wish to test in debug mode.                          -->
+<!--  <input type="hidden" name="debug" value=1>                              -->
+<!--  <input type="hidden" name="debugEmail" value="ameraga@orvea.io">        -->
+<!--  ----------------------------------------------------------------------  -->
 
-  <label for="email">E-mail</label
-  ><input id="email" maxlength="80" name="email" size="20" type="text" /><br />
+<label for="name">Contact Name</label><input  id="name" maxlength="80" name="name" size="20" type="text" /><br>
 
-  <label for="phone">Téléphone</label
-  ><input id="phone" maxlength="40" name="phone" size="20" type="text" /><br />
+<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
 
-  <label for="subject">Objet</label
-  ><input
-    id="subject"
-    maxlength="80"
-    name="subject"
-    size="20"
-    type="text"
-  /><br />
+Entreprise:<input  id="00N7Y000008KsG4" maxlength="255" name="00N7Y000008KsG4" size="20" type="text" /><br>
 
-  <label for="description">Description</label
-  ><textarea name="description"></textarea><br />
+Fonction:<select  id="00N7Y000008KsG9" name="00N7Y000008KsG9" title="Fonction"><option value="">--None--</option><option value="A">A</option>
+<option value="b">b</option>
+<option value="c">c</option>
+<option value="d">d</option>
+</select><br>
 
-  <label for="recordType">Type d'enregistrement de requête</label
-  ><select id="recordType" name="recordType">
-    <option value="">- Aucun -</option>
-    <option value="0122p0000007wH5">Ticket Interne Salesforce</option></select
-  ><br />
+<label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
 
-  <input type="hidden" id="external" name="external" value="1" /><br />
+Nom du projet:<input  id="00N7Y000008KsFV" maxlength="255" name="00N7Y000008KsFV" size="20" type="text" /><br>
 
-  <input type="submit" name="submit" />
+Cout de construction TCE:<input  id="00N7Y000008KsFz" name="00N7Y000008KsFz" size="20" type="text" /><br>
+
+Ville:<input  id="00N7Y000008KsFf" maxlength="255" name="00N7Y000008KsFf" size="20" type="text" /><br>
+
+Nombre de logements:<input  id="00N7Y000008KsFa" name="00N7Y000008KsFa" size="20" type="text" /><br>
+
+Nombre de chambres:<input  id="00N7Y000008KsFp" name="00N7Y000008KsFp" size="20" type="text" /><br>
+
+Nombre de maison:<input  id="00N7Y000008KsFu" name="00N7Y000008KsFu" size="20" type="text" /><br>
+
+Surface bureau:<input  id="00N7Y000008KsFb" name="00N7Y000008KsFb" size="20" type="text" /><br>
+
+<label for="description">Description</label><textarea name="description"></textarea><br>
+
+<input type="hidden"  id="external" name="external" value="1" /><br>
+
+<input type="submit" name="submit">
+
 </form>
