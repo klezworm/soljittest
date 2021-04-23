@@ -1,7 +1,7 @@
 <?php ?>
 <html>
     <head>
-  <link rel="shortcut icon" type="image/x-icon" href="img/orvealogo.png" />
+  <link rel="shortcut icon" type="image/x-icon" href="img/fr-orvea.jpeg" />
 </head>
 <body>
 <li><a href="Simuler le budjet.html">Simuler le budjet !</a></li>
