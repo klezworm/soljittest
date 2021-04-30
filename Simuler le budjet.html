@@ -5,9 +5,21 @@
 <!--  ----------------------------------------------------------------------  -->
 <head>
 <title>Simuler le budget </title>
+<script src="https://www.google.com/recaptcha/api.js?render=6LegH8AaAAAAAAl3-txp2sOqGRpQITJlPCUswxhm"></script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="shortcut icon" type="image/x-icon" href="img/orvealogo.png" />
 </head>
+
+<script>
+      function onClick(e) {
+        e.preventDefault();
+        grecaptcha.ready(function() {
+          grecaptcha.execute('6LegH8AaAAAAAAl3-txp2sOqGRpQITJlPCUswxhm', {action: 'submit'}).then(function(token) {
+              // Add your logic to submit to your backend server here.
+          });
+        });
+      }
+  </script>
 <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
 
 <!--  ----------------------------------------------------------------------  -->
