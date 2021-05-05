@@ -55,11 +55,12 @@
     <!--  <input type="hidden" name="debug" value=1>                              -->
     <!--  <input type="hidden" name="debugEmail" value="ameraga@orvea.io">        -->
     <!--  ----------------------------------------------------------------------  -->
-    <label for="recordType">Case Record Type</label
-    ><select id="recordType" name="recordType">
-      <option value="0127Y000001tKKa">Simuler le budget</option></select
-    ><br />
-    <input type="hidden" id="origin" name="origin" value="Web" /><br />
+    <label for="recordType" hidden>Case Record Type</label>
+    <select id="recordType" name="recordType">
+      <option value="0127Y000001tKKa">Simuler le budget</option>
+    </select>
+    <br/>
+    <input type="hidden" id="origin" name="origin" value="Web" /><br/>
     <label for="name">Nom Prénom</label
     ><input
       id="name"
@@ -67,8 +68,9 @@
       name="name"
       size="20"
       type="text"
-      required title="Ce champs est obligatoire"
-    /><br />
+      required
+      title="Ce champs est obligatoire"
+    /><br/>
 
     <label for="email">Email</label
     ><input
@@ -79,7 +81,7 @@
       type="email"
       required
       pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
-    /><br />
+    /><br/>
 
     Entreprise:<input
       id="00N7Y000008KsG4"
@@ -87,21 +89,23 @@
       name="00N7Y000008KsG4"
       size="20"
       type="text"
-      required title="Ce champs est obligatoire"
-    /><br />
+      required
+      title="Ce champs est obligatoire"
+    /><br/>
 
     Fonction:<select
       id="00N7Y000008KsG9"
       name="00N7Y000008KsG9"
       title="Fonction"
-      required title="Ce champs est obligatoire"
+      required
+      title="Ce champs est obligatoire"
     >
       <option value="">--None--</option>
       <option value="A">A</option>
       <option value="b">b</option>
       <option value="c">c</option>
       <option value="d">d</option></select
-    ><br />
+    ><br/>
 
     <label for="phone">Phone</label
     ><input
@@ -112,7 +116,7 @@
       type="tel"
       required
       title="Ce champs est obligatoire"
-    /><br />
+    /><br/>
 
     Nom du projet:<input
       id="00N7Y000008KsFV"
@@ -122,7 +126,7 @@
       type="text"
       required
       title="Ce champs est obligatoire"
-    /><br />
+    /><br/>
 
     Cout de construction TCE:<input
       id="00N7Y000008KsFz"
@@ -131,7 +135,7 @@
       type="number"
       required
       title="Ce champs est obligatoire"
-    /><br />
+    /><br/>
 
     Ville:<input
       id="00N7Y000008KsFf"
@@ -141,7 +145,7 @@
       type="text"
       required
       title="Ce champs est obligatoire"
-    /><br />
+    /><br/>
 
     Nombre de logements:<input
       id="00N7Y000008KsFa"
@@ -150,7 +154,7 @@
       type="number"
       required
       title="Ce champs est obligatoire"
-    /><br />
+    /><br/>
 
     Nombre de chambres:<input
       id="00N7Y000008KsFp"
@@ -159,7 +163,7 @@
       type="number"
       required
       title="Ce champs est obligatoire"
-    /><br />
+    /><br/>
 
     Nombre de maison:<input
       id="00N7Y000008KsFu"
@@ -168,7 +172,7 @@
       type="number"
       required
       title="Ce champs est obligatoire"
-    /><br />
+    /><br/>
 
     Surface bureau:<input
       id="00N7Y000008KsFb"
@@ -177,7 +181,7 @@
       type="number"
       required
       title="Ce champs est obligatoire"
-    /><br />
+    /><br/>
 
     <label for="description">Description</label
     ><textarea
@@ -185,7 +189,7 @@
       required
       title="Ce champs est obligatoire"
     ></textarea
-    ><br />
+    ><br/>
 
     <p>
       <input
