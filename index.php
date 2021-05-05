@@ -8,7 +8,7 @@
     <ul class="list-group">
 <li><a href="Simuler le budjet.html">Simuler le budjet.</a></li>
 <li><a href="Télécharger la plaquette commerciale.html">Télécharger la plaquette commerciale.</a></li>
-<li><a href="Prendre un rendrez-vous.html">Prendre un rendrez-vous.</a></li>
+<li><a href="Prendre un rendez-vous.html">Prendre un rendrez-vous.</a></li>
 <li><a href="recaptchav2.html">recaptchav2</a></li>
 </ul>
 </body>
