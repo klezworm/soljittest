@@ -22,6 +22,14 @@
   function enableBtn() {
     document.getElementById("Envoyer").disabled = false;
   }
+  function checkForm(form){
+  if(!form.terms.checked) {
+      alert("Veuillez accepter les conditions d'utilisation !");
+      form.terms.focus();
+      return false;
+    }
+    return true;
+  }
 </script>
 <!--  ----------
 
@@ -94,6 +102,7 @@ Plage horaire:<select  id="00N7Y000008R0CM" name="00N7Y000008R0CM" title="Plage 
 <option value="17h00 – 18h00">17h00 – 18h00</option>
 <option value="18h00 – 19h00">18h00 – 19h00</option>
 </select>
+<p><input type="checkbox" name="terms"> En remplissant ce formulaire, j’accepte que mes informations personnelles soient utilisées par Orvéa et ses filiales afin de me recontacter.</p>
   <div
     class="g-recaptcha"
     data-sitekey="6LfJJMAaAAAAANxK50C01WnMKXBjAjnuPyOOgYRs"

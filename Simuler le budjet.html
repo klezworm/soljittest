@@ -22,6 +22,14 @@
   function enableBtn() {
         document.getElementById("Envoyer").disabled = false;
     }
+    function checkForm(form){
+  if(!form.terms.checked) {
+      alert("Veuillez accepter les conditions d'utilisation !");
+      form.terms.focus();
+      return false;
+    }
+    return true;
+  }
 </script>
 <!--  NOTE: Please add the following <FORM> element to your page.             -->
 <!--  ----------------------------------------------------------------------  -->
@@ -78,6 +86,7 @@ Surface bureau:<input  id="00N7Y000008KsFb" name="00N7Y000008KsFb" size="20" typ
 <label for="description">Description</label><textarea name="description"></textarea><br>
 
 <input type="hidden"  id="external" name="external" value="1" /><br>
+<p><input type="checkbox" name="terms"> En remplissant ce formulaire, j’accepte que mes informations personnelles soient utilisées par Orvéa et ses filiales afin de me recontacter.</p>
 <div
     class="g-recaptcha"
     data-sitekey="6LfJJMAaAAAAANxK50C01WnMKXBjAjnuPyOOgYRs" data-callback="enableBtn"
