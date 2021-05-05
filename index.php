@@ -9,7 +9,7 @@
 <li><a href="Simuler le budjet.html">Simuler le budjet.</a></li>
 <li><a href="Télécharger la plaquette commerciale.html">Télécharger la plaquette commerciale.</a></li>
 <li><a href="Prendre un rendez-vous.html">Prendre un rendrez-vous.</a></li>
-<li><a href="recaptchav2.html">recaptchav2</a></li>
+<li><a href="Obtenir un devis.html">Obtenir un devis.</a></li>
 </ul>
 </body>
 </html>
