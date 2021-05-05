@@ -3,19 +3,27 @@
 <!--  If necessary, please modify the charset parameter to specify the        -->
 <!--  character set of your HTML page.                                        -->
 <!--  ----------------------------------------------------------------------  -->
-<head>
-    <title>Télécharger la plaquette commerciale</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="shortcut icon" type="image/x-icon" href="img/orvealogo.png" />
-</head>
-<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
-  <script src="https://www.google.com/recaptcha/api.js"></script>
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+<script src="https://www.google.com/recaptcha/api.js?hl=fr'"></script>
 <script>
- function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
- function enableBtn() {
+  function timestamp() {
+    var response = document.getElementById("g-recaptcha-response");
+    if (response == null || response.value.trim() == "") {
+      var elems = JSON.parse(
+        document.getElementsByName("captcha_settings")[0].value
+      );
+      elems["ts"] = JSON.stringify(new Date().getTime());
+      document.getElementsByName("captcha_settings")[0].value = JSON.stringify(
+        elems
+      );
+    }
+  }
+  setInterval(timestamp, 500);
+  function enableBtn() {
         document.getElementById("Envoyer").disabled = false;
     }
 </script>
+<!--  ----------
 
 <!--  ----------------------------------------------------------------------  -->
 <!--  NOTE: Please add the following <FORM> element to your page.             -->
@@ -59,7 +67,10 @@ Fonction:<select  id="00N7Y000008KsG9" name="00N7Y000008KsG9" title="Fonction"><
 </select><br>
 
 <label for="phone">Phone</label><input  id="phone" maxlength="40" name="phone" size="20" type="text" /><br>
-<div class="g-recaptcha" data-sitekey="6LegH8AaAAAAAAl3-txp2sOqGRpQITJlPCUswxhm"></div><br>
+<div
+    class="g-recaptcha"
+    data-sitekey="6LfJJMAaAAAAANxK50C01WnMKXBjAjnuPyOOgYRs" data-callback="enableBtn"
+  ></div>
 <input type="submit" name="Envoyer" id="Envoyer">
 
 </form>
