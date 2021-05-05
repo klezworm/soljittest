@@ -6,10 +6,10 @@
 </head>
 <body>
     <ul class="list-group">
-<li><a href="Simuler le budjet.html">Simuler le budjet.</a></li>
-<li><a href="Télécharger la plaquette commerciale.html">Télécharger la plaquette commerciale.</a></li>
-<li><a href="Prendre un rendez-vous.html">Prendre un rendrez-vous.</a></li>
-<li><a href="Obtenir un devis.html">Obtenir un devis.</a></li>
+<li><a href="1.Simuler le budjet.html">Simuler le budjet.</a></li>
+<li><a href="2.Télécharger la plaquette commerciale.html">Télécharger la plaquette commerciale.</a></li>
+<li><a href="3.Prendre un rendez-vous.html">Prendre un rendrez-vous.</a></li>
+<li><a href="4.Obtenir un devis.html">Obtenir un devis.</a></li>
 </ul>
 </body>
 </html>
