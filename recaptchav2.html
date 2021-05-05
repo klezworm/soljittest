@@ -7,9 +7,6 @@
 <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 <script src="https://www.google.com/recaptcha/api.js?hl=fr'"></script>
 <script>
-  function enableBtn() {
-        document.getElementById("submit").disabled = false;
-    }
   function timestamp() {
     var response = document.getElementById("g-recaptcha-response");
     if (response == null || response.value.trim() == "") {
@@ -23,6 +20,9 @@
     }
   }
   setInterval(timestamp, 500);
+  function enableBtn() {
+        document.getElementById("submit").disabled = false;
+    }
 </script>
 
 <!--  ----------------------------------------------------------------------  -->
@@ -58,5 +58,5 @@
     data-sitekey="6LfJJMAaAAAAANxK50C01WnMKXBjAjnuPyOOgYRs"
   ></div>
   <br />
-  <input type="submit" name="submit" disabled="true" />
+  <input type="submit" name="submit" id="submit" disabled="true" />
 </form>
