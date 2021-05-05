@@ -1,136 +1,130 @@
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: Please add the following <META> element to your page <HEAD>.      -->
-<!--  If necessary, please modify the charset parameter to specify the        -->
-<!--  character set of your HTML page.                                        -->
-<!--  ----------------------------------------------------------------------  -->
 <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
-<script src="https://www.google.com/recaptcha/api.js?hl=fr"></script>
-<script>
-  function timestamp() {
-    var response = document.getElementById("g-recaptcha-response");
-    if (response == null || response.value.trim() == "") {
-      var elems = JSON.parse(
-        document.getElementsByName("captcha_settings")[0].value
-      );
-      elems["ts"] = JSON.stringify(new Date().getTime());
-      document.getElementsByName("captcha_settings")[0].value = JSON.stringify(
-        elems
-      );
+<head>
+  <script src="https://www.google.com/recaptcha/api.js?hl=fr"></script>
+  <script>
+    function timestamp() {
+      var response = document.getElementById("g-recaptcha-response");
+      if (response == null || response.value.trim() == "") {
+        var elems = JSON.parse(
+          document.getElementsByName("captcha_settings")[0].value
+        );
+        elems["ts"] = JSON.stringify(new Date().getTime());
+        document.getElementsByName(
+          "captcha_settings"
+        )[0].value = JSON.stringify(elems);
+      }
     }
-  }
-  setInterval(timestamp, 500);
-  function enableBtn() {
-    document.getElementById("Envoyer").disabled = false;
-  }
-  function checkForm(form) {
-    if (!form.terms.checked) {
-      alert("Veuillez accepter les conditions d'utilisation !");
-      form.terms.focus();
-      return false;
+    setInterval(timestamp, 500);
+    function enableBtn() {
+      document.getElementById("Envoyer").disabled = false;
     }
-    return true;
-  }
-</script>
-<!--  ----------
+    function checkForm(form) {
+      if (!form.terms.checked) {
+        alert("Veuillez accepter les conditions d'utilisation !");
+        form.terms.focus();
+        return false;
+      }
+      return true;
+    }
+  </script>
+</head>
 
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: Please add the following <FORM> element to your page.             -->
-<!--  ----------------------------------------------------------------------  -->
-
-<form
-  lang="fr"
-  action="https://orvea--uniorvea.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8"
-  method="POST"
-  onsubmit="return checkForm(this);"
->
-  <input
-    type="hidden"
-    name="captcha_settings"
-    value='{"keyname":"caseManagementV2","fallback":"true","orgId":"00D7Y000000BE9B","ts":""}'
-  />
-  <input type="hidden" name="orgid" value="00D7Y000000BE9B" />
-  <input type="hidden" name="retURL" value="http://www.orvea.io" />
-
-  <!--  ----------------------------------------------------------------------  -->
-  <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
-  <!--  these lines if you wish to test in debug mode.                          -->
-  <!--  <input type="hidden" name="debug" value=1>                              -->
-  <!--  <input type="hidden" name="debugEmail" value="ameraga@orvea.io">        -->
-  <!--  ----------------------------------------------------------------------  -->
-
-  <label for="recordType" hidden>Case Record Type</label
-  ><select id="recordType" name="recordType" hidden>
-    <option value="0127Y000001tKKp">Obtenir un devis</option></select
-  ><br />
-  <label for="name">Contact Name</label
-  ><input id="name" maxlength="80" name="name" size="20" type="text" /><br />
-
-  <label for="email">Email</label
-  ><input
-    id="email"
-    maxlength="80"
-    name="email"
-    size="20"
-    type="email"
-    required
-    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
-  /><br />
-
-  Entreprise:<input
-    id="00N7Y000008KsG4"
-    maxlength="255"
-    name="00N7Y000008KsG4"
-    size="20"
-    type="text"
-  /><br />
-
-  Fonction:<select id="00N7Y000008KsG9" name="00N7Y000008KsG9" title="Fonction">
-    <option value="">--None--</option>
-    <option value="A">A</option>
-    <option value="b">b</option>
-    <option value="c">c</option>
-    <option value="d">d</option></select
-  ><br />
-
-  <label for="phone">Phone</label>
-
-  <input id="phone" maxlength="40" name="phone" size="20" type="text" /><br />
-
-  Date rendez-vous:<span class="dateInput dateOnlyInput">
-    <input
-      id="00N7Y000008R0CH"
-      name="00N7Y000008R0CH"
-      size="12"
-      type="text" /></span
-  ><br />
-
-  Plage horaire:<select
-    id="00N7Y000008R0CM"
-    name="00N7Y000008R0CM"
-    title="Plage horaire"
+<body>
+  <form
+    lang="fr"
+    action="https://orvea--uniorvea.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8"
+    method="POST"
+    onsubmit="return checkForm(this);"
   >
-    <option value="">--None--</option>
-    <option value="8h00 – 9h00">8h00 – 9h00</option>
-    <option value="9h00 – 10h00">9h00 – 10h00</option>
-    <option value="10h00 – 11h00">10h00 – 11h00</option>
-    <option value="11h00 – 12h00">11h00 – 12h00</option>
-    <option value="12h00 – 13h00">12h00 – 13h00</option>
-    <option value="13h00 – 14h00">13h00 – 14h00</option>
-    <option value="14h00 – 15h00">14h00 – 15h00</option>
-    <option value="15h00 – 16h00">15h00 – 16h00</option>
-    <option value="16h00 – 17h00">16h00 – 17h00</option>
-    <option value="17h00 – 18h00">17h00 – 18h00</option>
-    <option value="18h00 – 19h00">18h00 – 19h00</option>
-  </select>
-  <p>
-    <input type="checkbox" name="terms" /> En remplissant ce formulaire,
-    j’accepte que mes informations personnelles soient utilisées par Orvéa et
-    ses filiales afin de me recontacter.
-  </p>
-  <div
-    class="g-recaptcha"
-    data-sitekey="6LfJJMAaAAAAANxK50C01WnMKXBjAjnuPyOOgYRs"
-    data-callback="enableBtn"
-  ></div>
-  <input type="submit" name="Obtenir un devis" id="Envoyer" disabled />
-</form>
+    <input
+      type="hidden"
+      name="captcha_settings"
+      value='{"keyname":"caseManagementV2","fallback":"true","orgId":"00D7Y000000BE9B","ts":""}'
+    />
+    <input type="hidden" name="orgid" value="00D7Y000000BE9B" />
+    <input type="hidden" name="retURL" value="http://www.orvea.io" />
+
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+    <!--  these lines if you wish to test in debug mode.                          -->
+    <!--  <input type="hidden" name="debug" value=1>                              -->
+    <!--  <input type="hidden" name="debugEmail" value="ameraga@orvea.io">        -->
+    <!--  ----------------------------------------------------------------------  -->
+    <input type="hidden" name="recordType" value="0127Y000001tKKp" />
+    <label for="name">Nom Prénom</label
+    ><input id="name" maxlength="80" name="name" size="20" type="text" /><br />
+
+    <label for="email">Email</label
+    ><input
+      id="email"
+      maxlength="80"
+      name="email"
+      size="20"
+      type="email"
+      required
+      pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+    /><br />
+
+    Entreprise:<input
+      id="00N7Y000008KsG4"
+      maxlength="255"
+      name="00N7Y000008KsG4"
+      size="20"
+      type="text"
+    /><br />
+
+    Fonction:<select
+      id="00N7Y000008KsG9"
+      name="00N7Y000008KsG9"
+      title="Fonction"
+    >
+      <option value="">------</option>
+      <option value="A">A</option>
+      <option value="b">b</option>
+      <option value="c">c</option>
+      <option value="d">d</option></select
+    ><br />
+
+    <label for="phone">Phone</label>
+
+    <input id="phone" maxlength="40" name="phone" size="20" type="text" /><br />
+
+    Date rendez-vous:<span class="dateInput dateOnlyInput">
+      <input
+        id="00N7Y000008R0CH"
+        name="00N7Y000008R0CH"
+        size="12"
+        type="text" /></span
+    ><br />
+
+    Plage horaire:<select
+      id="00N7Y000008R0CM"
+      name="00N7Y000008R0CM"
+      title="Plage horaire"
+    >
+      <option value="">--------</option>
+      <option value="8h00 – 9h00">8h00 – 9h00</option>
+      <option value="9h00 – 10h00">9h00 – 10h00</option>
+      <option value="10h00 – 11h00">10h00 – 11h00</option>
+      <option value="11h00 – 12h00">11h00 – 12h00</option>
+      <option value="12h00 – 13h00">12h00 – 13h00</option>
+      <option value="13h00 – 14h00">13h00 – 14h00</option>
+      <option value="14h00 – 15h00">14h00 – 15h00</option>
+      <option value="15h00 – 16h00">15h00 – 16h00</option>
+      <option value="16h00 – 17h00">16h00 – 17h00</option>
+      <option value="17h00 – 18h00">17h00 – 18h00</option>
+      <option value="18h00 – 19h00">18h00 – 19h00</option>
+    </select>
+    <p>
+      <input type="checkbox" name="terms" /> En remplissant ce formulaire,
+      j’accepte que mes informations personnelles soient utilisées par Orvéa et
+      ses filiales afin de me recontacter.
+    </p>
+    <div
+      class="g-recaptcha"
+      data-sitekey="6LfJJMAaAAAAANxK50C01WnMKXBjAjnuPyOOgYRs"
+      data-callback="enableBtn"
+    ></div>
+    <input type="submit" name="Obtenir un devis" id="Envoyer" disabled />
+  </form>
+</body>
