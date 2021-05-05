@@ -38,6 +38,7 @@
 <!--  ----------------------------------------------------------------------  -->
 
 <form
+  lang="fr"
   action="https://orvea--uniorvea.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8"
   method="POST"
   onsubmit="return checkForm(this);"
@@ -57,29 +58,26 @@
   <!--  <input type="hidden" name="debugEmail" value="ameraga@orvea.io">        -->
   <!--  ----------------------------------------------------------------------  -->
 
-  <label for="recordType">Case Record Type</label
-  ><select id="recordType" name="recordType">
+  <label for="recordType">Case Record Type</label>
+  <select id="recordType" name="recordType">
     <option value="0127Y000001tKKf">
       Télécharger la plaquette commerciale
     </option>
-    <option value="0127Y000001tKKp">Obtenir un devis</option>
-    <option value="0127Y000001tKKk">Prendre un rendrez vous</option>
-    <option value="0127Y000001tKKa">Simuler le budjet</option>
+  </select>
+  <br />
+  <label for="name">Contact Name</label>
+  <input id="name" maxlength="80" name="name" size="20" type="text" /><br />
 
-    <option value="0122p0000007wH5">Ticket Interne Salesforce</option></select
-  ><br />
-  <label for="name">Contact Name</label
-  ><input id="name" maxlength="80" name="name" size="20" type="text" /><br />
-
-  <label for="email">Email</label
-  ><input
+  <label for="email">Email</label>
+  <input
     id="email"
     maxlength="80"
     name="email"
     type="email"
     required
     pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
-  /><br />
+  />
+  <br />
 
   Entreprise:<input
     id="00N7Y000008KsG4"
@@ -87,18 +85,21 @@
     name="00N7Y000008KsG4"
     size="20"
     type="text"
-  /><br />
+  />
+  <br />
 
   Fonction:<select id="00N7Y000008KsG9" name="00N7Y000008KsG9" title="Fonction">
     <option value="">--None--</option>
     <option value="A">A</option>
     <option value="b">b</option>
     <option value="c">c</option>
-    <option value="d">d</option></select
-  ><br />
+    <option value="d">d</option>
+  </select>
+  <br />
 
-  <label for="phone">Phone</label
-  ><input id="phone" maxlength="40" name="phone" size="20" type="text" /><br />
+  <label for="phone">Phone</label>
+  <input id="phone" maxlength="40" name="phone" size="20" type="text" />
+  <br />
   <p>
     <input type="checkbox" name="terms" /> En remplissant ce formulaire,
     j’accepte que mes informations personnelles soient utilisées par Orvéa et
