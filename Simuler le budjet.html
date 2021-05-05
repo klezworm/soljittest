@@ -9,21 +9,14 @@
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
  function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
+ function enableBtn() {
+        document.getElementById("Envoyer").disabled = false;
+    }
 </script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="shortcut icon" type="image/x-icon" href="img/orvealogo.png" />
 </head>
 
-<script>
-      function onClick(e) {
-        e.preventDefault();
-        grecaptcha.ready(function() {
-          grecaptcha.execute('6LegH8AaAAAAAAl3-txp2sOqGRpQITJlPCUswxhm', {action: 'submit'}).then(function(token) {
-              // Add your logic to submit to your backend server here.
-          });
-        });
-      }
-  </script>
 <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
 
 <!--  ----------------------------------------------------------------------  -->
@@ -79,7 +72,7 @@ Surface bureau:<input  id="00N7Y000008KsFb" name="00N7Y000008KsFb" size="20" typ
 
 <input type="hidden"  id="external" name="external" value="1" /><br>
 <div class="g-recaptcha" data-sitekey="6LegH8AaAAAAAAl3-txp2sOqGRpQITJlPCUswxhm"></div><br>
-<input type="submit" name="submit">
+<input type="submit" name="Envoyer" id="Envoyer">
 </form>
 </form>
 
