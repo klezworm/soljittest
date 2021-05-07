@@ -1,0 +1,84 @@
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+<head>
+  <script src="https://www.google.com/recaptcha/api.js?hl=fr"></script>
+  <script>
+    function timestamp() {
+      var response = document.getElementById("g-recaptcha-response");
+      if (response == null || response.value.trim() == "") {
+        var elems = JSON.parse(
+          document.getElementsByName("captcha_settings")[0].value
+        );
+        elems["ts"] = JSON.stringify(new Date().getTime());
+        document.getElementsByName(
+          "captcha_settings"
+        )[0].value = JSON.stringify(elems);
+      }
+    }
+    setInterval(timestamp, 500);
+    function enableBtn() {
+      document.getElementById("Envoyer").disabled = false;
+    }
+    function checkForm(form) {
+      if (!form.terms.checked) {
+        alert("Veuillez accepter les conditions d'utilisation !");
+        form.terms.focus();
+        return false;
+      }
+      return true;
+    }
+  </script>
+</head>
+
+<body>
+  <form
+    lang="fr"
+    action="https://orvea--uniorvea.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8"
+    method="POST"
+    onsubmit="return checkForm(this);"
+  >
+    <input
+      type="hidden"
+      name="captcha_settings"
+      value='{"keyname":"caseManagementV2","fallback":"true","orgId":"00D7Y000000BE9B","ts":""}'
+    />
+    <input type="hidden" name="orgid" value="00D7Y000000BE9B" />
+    <input type="hidden" name="retURL" value="http://www.orvea.io" />
+
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+    <!--  these lines if you wish to test in debug mode.                          -->
+    <!--  <input type="hidden" name="debug" value=1>                              -->
+    <!--  <input type="hidden" name="debugEmail" value="ameraga@orvea.io">        -->
+    <!--  ----------------------------------------------------------------------  -->
+    <input type="hidden" name="recordType" value="0127Y000001ujSQ" />
+    
+    <label for="email">Adresse mail</label
+    ><input
+      id="email"
+      maxlength="80"
+      name="email"
+      size="20"
+      type="email"
+      required
+      pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+    /><br />
+
+   
+    <p>
+      <input type="checkbox" name="terms" /> En remplissant ce formulaire,
+      j’accepte que mes informations personnelles soient utilisées par Orvéa et
+      ses filiales afin de me recontacter.
+    </p>
+    <div
+      class="g-recaptcha"
+      data-sitekey="6LfJJMAaAAAAANxK50C01WnMKXBjAjnuPyOOgYRs"
+      data-callback="enableBtn"
+    ></div>
+    <input
+      type="submit"
+      value="S'abonner aux Newsletters"
+      id="Envoyer"
+      disabled
+    />
+  </form>
+</body>

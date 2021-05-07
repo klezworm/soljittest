@@ -11,6 +11,7 @@
 <li><a href="3.Prendre un rendez-vous.html">Prendre un rendrez-vous.</a></li>
 <li><a href="4.Obtenir un devis.html">Obtenir un devis.</a></li>
 <li><a href="5.Demande de prestation.html">Demande de prestation.</a></li>
+<li><a href="5.Newsletters.html">Newsletters.</a></li>
 </ul>
 </body>
 </html>
