@@ -1,8 +1,12 @@
 <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 <head>
-  <script src="https://www.google.com/recaptcha/api.js?hl=fr"></script>
+  <!-- <script src="https://www.google.com/recaptcha/api.js?hl=fr"></script> -->
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script>
-    function timestamp() {
+    function onSubmit(token) {
+         document.getElementById("demo-form").submit();
+       }
+    /*function timestamp() {
       var response = document.getElementById("g-recaptcha-response");
       if (response == null || response.value.trim() == "") {
         var elems = JSON.parse(
@@ -17,7 +21,7 @@
     setInterval(timestamp, 500);
     function enableBtn() {
       document.getElementById("Envoyer").disabled = false;
-    }
+    }*/
     function checkForm(form) {
       if (!form.terms.checked) {
         alert("Veuillez accepter les conditions d'utilisation !");
@@ -31,6 +35,7 @@
 
 <body>
   <form
+    id="form1"
     lang="fr"
     action="https://orvea--uniorvea.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8"
     method="POST"
@@ -199,7 +204,9 @@
         data-sitekey="6LfJJMAaAAAAANxK50C01WnMKXBjAjnuPyOOgYRs"
         data-callback="enableBtn"
       ></div>
-      <input type="submit" value="Simuler un budget" id="Envoyer" disabled />
+      <!-- <input type="submit" value="Simuler un budget" id="Envoyer" disabled /> -->
+       <button class="g-recaptcha" data-sitekey="6LenP84aAAAAANyOv1qi7NXr-_-h8wXBiKdNbzU_" data-callback='onSubmit'>Simuler un budget</button>
+      <br/>
     </form>
   </form>
 </body>
