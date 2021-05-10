@@ -12,6 +12,7 @@
 <li><a href="4.Obtenir un devis.html">Obtenir un devis.</a></li>
 <li><a href="5.Demande de prestation.html">Demande de prestation.</a></li>
 <li><a href="6.Newsletters.html">Newsletters.</a></li>
+<li><a href="7.invisible reCAPTCHA.html">7.invisible reCAPTCHA.</a></li>
 </ul>
 </body>
 </html>
