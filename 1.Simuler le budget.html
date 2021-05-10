@@ -35,7 +35,7 @@
 
 <body>
   <form
-   
+   id="form1"
     lang="fr"
     action="https://orvea--uniorvea.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8"
     method="POST"
@@ -46,7 +46,7 @@
       name="captcha_settings"
       value='{"keyname":"caseManagementV2","fallback":"true","orgId":"00D7Y000000BE9B","ts":""}'
     />
-    <form class="form-group"  id="form1">
+
       <input type="hidden" name="orgid" value="00D7Y000000BE9B" />
       <input type="hidden" name="retURL" value="http://www.orvea.io" />
       <input type="hidden" name="recordType" value="0127Y000001tKKa" />
@@ -201,8 +201,8 @@
       </p>
       
       <!-- <input type="submit" value="Simuler un budget" id="Envoyer" disabled /> -->
-       <button class="g-recaptcha" data-sitekey="6LenP84aAAAAANyOv1qi7NXr-_-h8wXBiKdNbzU_" >Submit</button>
+       <button class="g-recaptcha" data-sitekey="6LenP84aAAAAANyOv1qi7NXr-_-h8wXBiKdNbzU_" data-callback='onSubmit'>Submit</button>
       <br/>
-    </form>
+
   </form>
 </body>
