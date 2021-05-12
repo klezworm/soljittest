@@ -1,12 +1,12 @@
 <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 <head>
-  <!-- <script src="https://www.google.com/recaptcha/api.js?hl=fr"></script> -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <script src="https://www.google.com/recaptcha/api.js?hl=fr"></script>
+  
   <script>
     function onSubmit(token) {
          document.getElementById("form1").submit();
        }
-    /*function timestamp() {
+    function timestamp() {
       var response = document.getElementById("g-recaptcha-response");
       if (response == null || response.value.trim() == "") {
         var elems = JSON.parse(
@@ -21,7 +21,7 @@
     setInterval(timestamp, 500);
     function enableBtn() {
       document.getElementById("Envoyer").disabled = false;
-    }*/
+    }
     function checkForm(form) {
       if (!form.terms.checked) {
         alert("Veuillez accepter les conditions d'utilisation !");
@@ -200,8 +200,8 @@
         recontacter.
       </p>
       
-      <!-- <input type="submit" value="Simuler un budget" id="Envoyer" disabled /> -->
-       <button class="g-recaptcha" data-sitekey="6LenP84aAAAAANyOv1qi7NXr-_-h8wXBiKdNbzU_" data-callback='onSubmit'>Submit</button>
+      <input type="submit" value="Simuler un budget" id="Envoyer" disabled />
+       
       <br/>
 
   </form>
