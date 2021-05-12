@@ -3,9 +3,7 @@
   <script src="https://www.google.com/recaptcha/api.js?hl=fr"></script>
   
   <script>
-    function onSubmit(token) {
-         document.getElementById("form1").submit();
-       }
+   
     function timestamp() {
       var response = document.getElementById("g-recaptcha-response");
       if (response == null || response.value.trim() == "") {
@@ -201,11 +199,11 @@
       </p>
       
       <input type="submit" value="Simuler un budget" id="Envoyer" disabled />
-      <div
+     <div
       class="g-recaptcha"
       data-sitekey="6LfJJMAaAAAAANxK50C01WnMKXBjAjnuPyOOgYRs"
       data-callback="enableBtn"
-    >
+    ></div>
 
       <br/>
 
