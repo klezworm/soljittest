@@ -13,6 +13,7 @@
 <li><a href="5.Demande de prestation.html">Demande de prestation.</a></li>
 <li><a href="6.Newsletters.html">Newsletters.</a></li>
 <li><a href="7.invisible reCAPTCHA.html">7.invisible reCAPTCHA.</a></li>
+<li><a href="8.Simuler le budget (prod).html">8.Simuler le budget (prod).</a></li>
 </ul>
 </body>
 </html>
