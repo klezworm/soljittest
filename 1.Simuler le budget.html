@@ -1,9 +1,8 @@
 <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 <head>
   <script src="https://www.google.com/recaptcha/api.js?hl=fr"></script>
-  
+
   <script>
-   
     function timestamp() {
       var response = document.getElementById("g-recaptcha-response");
       if (response == null || response.value.trim() == "") {
@@ -11,9 +10,8 @@
           document.getElementsByName("captcha_settings")[0].value
         );
         elems["ts"] = JSON.stringify(new Date().getTime());
-        document.getElementsByName(
-          "captcha_settings"
-        )[0].value = JSON.stringify(elems);
+        document.getElementsByName("captcha_settings")[0].value =
+          JSON.stringify(elems);
       }
     }
     setInterval(timestamp, 500);
@@ -33,175 +31,179 @@
 
 <body>
   <form
-   id="form1"
+    id="form1"
     lang="fr"
     action="https://orvea--uniorvea.my.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8"
     method="POST"
     onsubmit="return checkForm(this);"
   >
-   <input type=hidden name='captcha_settings' value='{"keyname":"reCAPTCHAV2","fallback":"false","orgId":"00D7Y000000BE9B","ts":""}'>
+    <input
+      type="hidden"
+      name="captcha_settings"
+      value='{"keyname":"reCAPTCHAV2","fallback":"false","orgId":"00D7Y000000BE9B","ts":""}'
+    />
 
-      <input type="hidden" name="orgid" value="00D7Y000000BE9B" />
-      <input type="hidden" name="retURL" value="http://www.orvea.io" />
-      <input type="hidden" name="recordType" value="0127Y000001tKKa" />
-      <input type="hidden" id="origin" name="origin" value="Web" /><br />
-      Nom:<input
-        id="00N7Y000008R2Tt"
-        maxlength="80"
-        name="00N7Y000008R2Tt"
-        size="20"
-        type="text"
-      /><br />
+    <input type="hidden" name="orgid" value="00D7Y000000BE9B" />
+    <input type="hidden" name="retURL" value="http://www.orvea.io" />
+    <input type="hidden" name="recordType" value="0127Y000001tKKa" />
+    <input type="hidden" id="origin" name="origin" value="Web" /><br />
+    Nom:<input
+      id="00N7Y000008R2Tt"
+      maxlength="80"
+      name="00N7Y000008R2Tt"
+      size="20"
+      type="text"
+      required
+    /><br />
 
-      Prénom:<input
-        id="00N7Y000008R2Tq"
-        maxlength="80"
-        name="00N7Y000008R2Tq"
-        size="20"
-        type="text"
-      /><br />
+    Prénom:<input
+      id="00N7Y000008R2Tq"
+      maxlength="80"
+      name="00N7Y000008R2Tq"
+      size="20"
+      type="text"
+      required
+    /><br />
 
-      <label for="email">Adresse mail</label
-      ><input
-        id="email"
-        maxlength="80"
-        name="email"
-        size="20"
-        type="email"
-        required
-        pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
-      /><br />
+    <label for="email">Adresse mail</label
+    ><input
+      id="email"
+      maxlength="80"
+      name="email"
+      size="20"
+      type="email"
+      required
+      pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+    /><br />
 
-      Entreprise:<input
-        id="00N7Y000008KsG4"
-        maxlength="255"
-        name="00N7Y000008KsG4"
-        size="20"
-        type="text"
-        required
-        title="Ce champs est obligatoire"
-      /><br />
+    Entreprise:<input
+      id="00N7Y000008KsG4"
+      maxlength="255"
+      name="00N7Y000008KsG4"
+      size="20"
+      type="text"
+      required
+      title="Ce champs est obligatoire"
+    /><br />
 
-      Quelle est votre Fonction ?<select
-        id="00N7Y000008KsG9"
-        name="00N7Y000008KsG9"
-        required
-        title="Ce champs est obligatoire"
-      >
-        <option value="">------</option>
-        <option>Directeur d'agence</option>
-        <option>Directeur opérationnel</option>
-        <option>Directeur de programme</option>
-        <option>Directeur Technique national</option>
-        <option>Directeur Technique régional</option>
-        <option>Directeur des études</option>
-        <option>Responsable d'achats</option>
-        <option>Responsable Technique</option>
-        <option>Architecte</option>
-        <option>Economiste</option>
-        <option>AMO</option>
-        <option>Autre</option></select
-      ><br />
+    Quelle est votre Fonction ?<select
+      id="00N7Y000008KsG9"
+      name="00N7Y000008KsG9"
+      required
+      title="Ce champs est obligatoire"
+    >
+      <option value="">------</option>
+      <option>Directeur d'agence</option>
+      <option>Directeur opérationnel</option>
+      <option>Directeur de programme</option>
+      <option>Directeur Technique national</option>
+      <option>Directeur Technique régional</option>
+      <option>Directeur des études</option>
+      <option>Responsable d'achats</option>
+      <option>Responsable Technique</option>
+      <option>Architecte</option>
+      <option>Economiste</option>
+      <option>AMO</option>
+      <option>Autre</option></select
+    ><br />
 
-      <label for="phone">Téléphone</label
-      ><input
-        id="phone"
-        maxlength="40"
-        name="phone"
-        size="20"
-        type="tel"
-        required
-        title="Ce champs est obligatoire"
-      /><br />
+    <label for="phone">Téléphone</label
+    ><input
+      id="phone"
+      maxlength="40"
+      name="phone"
+      size="20"
+      type="tel"
+      required
+      title="Ce champs est obligatoire"
+    /><br />
 
-      Nom du projet:<input
-        id="00N7Y000008KsFV"
-        maxlength="255"
-        name="00N7Y000008KsFV"
-        size="20"
-        type="text"
-        required
-        title="Ce champs est obligatoire"
-      /><br />
+    Nom du projet:<input
+      id="00N7Y000008KsFV"
+      maxlength="255"
+      name="00N7Y000008KsFV"
+      size="20"
+      type="text"
+      required
+      title="Ce champs est obligatoire"
+    /><br />
 
-      Coût de construction TCE:<input
-        id="00N7Y000008KsFz"
-        name="00N7Y000008KsFz"
-        size="20"
-        type="number"
-        required
-        title="Ce champs est obligatoire"
-      /><br />
+    Coût de construction TCE:<input
+      id="00N7Y000008KsFz"
+      name="00N7Y000008KsFz"
+      size="20"
+      type="number"
+      required
+      title="Ce champs est obligatoire"
+    /><br />
 
-      Ville:<input
-        id="00N7Y000008KsFf"
-        maxlength="255"
-        name="00N7Y000008KsFf"
-        size="20"
-        type="text"
-        required
-        title="Ce champs est obligatoire"
-      /><br />
+    Ville:<input
+      id="00N7Y000008KsFf"
+      maxlength="255"
+      name="00N7Y000008KsFf"
+      size="20"
+      type="text"
+      required
+      title="Ce champs est obligatoire"
+    /><br />
 
-      Nombre de logements:<input
-        id="00N7Y000008KsFa"
-        name="00N7Y000008KsFa"
-        size="20"
-        type="number"
-        required
-        title="Ce champs est obligatoire"
-      /><br />
+    Nombre de logements:<input
+      id="00N7Y000008KsFa"
+      name="00N7Y000008KsFa"
+      size="20"
+      type="number"
+      required
+      title="Ce champs est obligatoire"
+    /><br />
 
-      Nombre de chambres:<input
-        id="00N7Y000008KsFp"
-        name="00N7Y000008KsFp"
-        size="20"
-        type="number"
-        required
-        title="Ce champs est obligatoire"
-      /><br />
+    Nombre de chambres:<input
+      id="00N7Y000008KsFp"
+      name="00N7Y000008KsFp"
+      size="20"
+      type="number"
+      required
+      title="Ce champs est obligatoire"
+    /><br />
 
-      Nombre de maison:<input
-        id="00N7Y000008KsFu"
-        name="00N7Y000008KsFu"
-        size="20"
-        type="number"
-        required
-        title="Ce champs est obligatoire"
-      /><br />
+    Nombre de maison:<input
+      id="00N7Y000008KsFu"
+      name="00N7Y000008KsFu"
+      size="20"
+      type="number"
+      required
+      title="Ce champs est obligatoire"
+    /><br />
 
-      Surface bureau:<input
-        id="00N7Y000008KsFb"
-        name="00N7Y000008KsFb"
-        size="20"
-        type="number"
-        required
-        title="Ce champs est obligatoire"
-      /><br />
+    Surface bureau:<input
+      id="00N7Y000008KsFb"
+      name="00N7Y000008KsFb"
+      size="20"
+      type="number"
+      required
+      title="Ce champs est obligatoire"
+    /><br />
 
-      <label for="description">Description</label
-      ><textarea
-        name="description"
-        required
-        title="Ce champs est obligatoire"
-      ></textarea
-      ><br />
+    <label for="description">Description</label
+    ><textarea
+      name="description"
+      required
+      title="Ce champs est obligatoire"
+    ></textarea
+    ><br />
 
-      <p>
-        <input type="checkbox" name="terms" title="Ce champs est obligatoire" />
-        En remplissant ce formulaire, j’accepte que mes informations
-        personnelles soient utilisées par Orvéa et ses filiales afin de me
-        recontacter.
-      </p>
-      
-      <input type="submit" value="Simuler un budget" id="Envoyer" disabled />
-     <div
+    <p>
+      <input type="checkbox" name="terms" title="Ce champs est obligatoire" />
+      En remplissant ce formulaire, j’accepte que mes informations personnelles
+      soient utilisées par Orvéa et ses filiales afin de me recontacter.
+    </p>
+
+    <input type="submit" value="Simuler un budget" id="Envoyer" disabled />
+    <div
       class="g-recaptcha"
       data-sitekey="6LfJJMAaAAAAANxK50C01WnMKXBjAjnuPyOOgYRs"
       data-callback="enableBtn"
     ></div>
 
-      <br/>
-
+    <br />
   </form>
 </body>
