@@ -27,6 +27,7 @@
     }
   </script>
 </head>
+
 <body>
   <form
     lang="fr"
@@ -43,7 +44,7 @@
     <!-- <input type="hidden" name="debugEmail" value="ameraga@orvea.io" /> -->
     <input type="hidden" name="orgid" value="00D2p0000013f6Y" />
     <input type="hidden" name="retURL" value="http://www.orvea.io" />
-    <input type="hidden" name="recordType" value="0122p000000pMEUAA2" />
+    <input type="hidden" name="recordType" value="0122p000000pMETAA2" />
     Nom:<input
       id="00N2p000008ZAgw"
       maxlength="80"
@@ -82,7 +83,8 @@
       required
     /><br />
 
-    Quelle est votre Fonction ?<select
+    Quelle est votre Fonction ?
+    <select
       id="00N2p000008ZAgv"
       name="00N2p000008ZAgv"
       required
@@ -102,46 +104,27 @@
       <option>AMO</option>
       <option>Autre</option></select
     ><br />
-
+    Autre Fonction:<input
+      id="00N2p000008ZAgr"
+      maxlength="80"
+      name="00N2p000008ZAgr"
+      size="20"
+      type="text"
+    /><br />
     <label for="phone">Téléphone</label>
 
-    <input
-      id="phone"
-      maxlength="40"
-      name="phone"
-      size="20"
-      type="tel"
-      required
-    /><br />
-
-    Date rendez-vous:<span class="dateInput dateOnlyInput">
-      <input
-        id="00N2p000008ZAgt"
-        name="00N2p000008ZAgt"
-        size="12"
-        type="text"
-        required /></span
-    ><br />
-
-    Plage horaire:<select
-      id="00N2p000008ZAh2"
-      name="00N2p000008ZAh2"
-      title="Plage horaire"
+    <input id="phone" maxlength="40" name="phone" size="20" type="tel" /><br />
+    Offre demandée:<select
+      id="00N2p000008ZAh1"
+      name="00N2p000008ZAh1"
+      title="Offre demandée"
       required
     >
       <option value="">--None--</option>
-      <option value="8h00 – 9h00">8h00 – 9h00</option>
-      <option value="9h00 – 10h00">9h00 – 10h00</option>
-      <option value="10h00 – 11h00">10h00 – 11h00</option>
-      <option value="11h00 – 12h00">11h00 – 12h00</option>
-      <option value="12h00 – 13h00">12h00 – 13h00</option>
-      <option value="13h00 – 14h00">13h00 – 14h00</option>
-      <option value="14h00 – 15h00">14h00 – 15h00</option>
-      <option value="15h00 – 16h00">15h00 – 16h00</option>
-      <option value="16h00 – 17h00">16h00 – 17h00</option>
-      <option value="17h00 – 18h00">17h00 – 18h00</option>
-      <option value="18h00 – 19h00">18h00 – 19h00</option>
-    </select>
+      <option value="Classique">Classique</option>
+      <option value="Full">Full</option>
+      <option value="Exclusive">Exclusive</option></select
+    ><br />
     <p>
       <input type="checkbox" name="terms" /> En remplissant ce formulaire,
       j’accepte que mes informations personnelles soient utilisées par Orvéa et
@@ -152,6 +135,6 @@
       data-sitekey="6LfJJMAaAAAAANxK50C01WnMKXBjAjnuPyOOgYRs"
       data-callback="enableBtn"
     ></div>
-    <input type="submit" value="Prendre un rendez-vous" id="Envoyer" disabled />
+    <input type="submit" value="Obtenir un devis" id="Envoyer" disabled />
   </form>
 </body>
