@@ -8,7 +8,7 @@
     <ul class="list-group">
 <li><a href="Sandbox.html">Sandbox.</a></li>
 <li><a href="Production.html">Production.</a></li>
-<a href="https://docs.google.com/spreadsheets/d/1tcpoMJRKhBXvGrA1xcob31aMPOBJ-7XPI0Hxg10BOpE/edit?usp=sharing">Tableau des Ids</a>
+<a href="https://docs.google.com/spreadsheets/d/1tcpoMJRKhBXvGrA1xcob31aMPOBJ-7XPI0Hxg10BOpE/edit?usp=sharing">Tableau des Ids(google sheet)</a>
 
 </ul>
 </body>
