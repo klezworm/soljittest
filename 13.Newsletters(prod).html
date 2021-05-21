@@ -1,0 +1,61 @@
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+<head>
+  <script src="https://www.google.com/recaptcha/api.js?hl=fr"></script>
+  <script>
+    
+    function checkForm(form) {
+      if (!form.terms.checked) {
+        alert("Veuillez accepter les conditions d'utilisation !");
+        form.terms.focus();
+        return false;
+      }
+      return true;
+    }
+  </script>
+</head>
+
+<body>
+  <form
+    lang="fr"
+    action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8"
+    method="POST"
+    onsubmit="return checkForm(this);"
+  >
+    
+    <input type="hidden" name="orgid" value="00D2p0000013f6Y" />
+    <input type="hidden" name="retURL" value="http://www.orvea.io" />
+
+    <!--  ----------------------------------------------------------------------  -->
+    <!--  NOTE: These fields are optional debugging elements. Please uncomment    -->
+    <!--  these lines if you wish to test in debug mode.                          -->
+    <!--  <input type="hidden" name="debug" value=1>                              -->
+    <!--  <input type="hidden" name="debugEmail" value="ameraga@orvea.io">        -->
+    <!--  ----------------------------------------------------------------------  -->
+    <input type="hidden" name="recordType" value="0122p000000pMESAA2" />
+    
+    <label for="email">Adresse mail</label
+    ><input
+      id="email"
+      maxlength="80"
+      name="email"
+      size="20"
+      type="email"
+      required
+      pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+    /><br />
+
+   
+    <p>
+      <input type="checkbox" name="terms" /> En remplissant ce formulaire,
+      j’accepte que mes informations personnelles soient utilisées par Orvéa et
+      ses filiales afin de me recontacter.
+    </p>
+    
+    <input
+      type="submit"
+      value="S'abonner aux Newsletters"
+      id="Envoyer"
+      
+    />
+  </form>
+</body>

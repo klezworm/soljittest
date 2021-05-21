@@ -18,6 +18,7 @@
 <li><a href="10.Prendre un rendez-vous(prod).html">10.Prendre un rendez-vous(prod).</a></li>
 <li><a href="11.Obtenir un devis.(prod).html">11.Obtenir un devis.(prod).</a></li>
 <li><a href="12.Demande de prestation(prod).html">12.Demande de prestation(prod).</a></li>
+<li><a href="13.Newsletters(prod).html">13.Newsletters(prod).</a></li>
 </ul>
 </body>
 </html>
