@@ -1,0 +1,157 @@
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+<head>
+  <script src="https://www.google.com/recaptcha/api.js?hl=fr"></script>
+  <script>
+    function timestamp() {
+      var response = document.getElementById("g-recaptcha-response");
+      if (response == null || response.value.trim() == "") {
+        var elems = JSON.parse(
+          document.getElementsByName("captcha_settings")[0].value
+        );
+        elems["ts"] = JSON.stringify(new Date().getTime());
+        document.getElementsByName("captcha_settings")[0].value =
+          JSON.stringify(elems);
+      }
+    }
+    setInterval(timestamp, 500);
+    function enableBtn() {
+      document.getElementById("Envoyer").disabled = false;
+    }
+    function checkForm(form) {
+      if (!form.terms.checked) {
+        alert("Veuillez accepter les conditions d'utilisation !");
+        form.terms.focus();
+        return false;
+      }
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <form
+    lang="fr"
+    action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8"
+    method="POST"
+    onsubmit="return checkForm(this);"
+  >
+    <input
+      type="hidden"
+      name="captcha_settings"
+      value='{"keyname":"reCAPTCHAV2","fallback":"true","orgId":"00D2p0000013f6Y","ts":""}'
+    />
+    <!-- <input type="hidden" name="debug" value="1" /> -->
+    <!-- <input type="hidden" name="debugEmail" value="ameraga@orvea.io" /> -->
+    <input type="hidden" name="orgid" value="00D2p0000013f6Y" />
+    <input type="hidden" name="retURL" value="http://www.orvea.io" />
+    <input type="hidden" name="recordType" value="0122p000000pMEUAA2" />
+    Nom:<input
+      id="00N2p000008ZAgw"
+      maxlength="80"
+      name="00N2p000008ZAgw"
+      size="20"
+      type="text"
+      required
+    /><br />
+
+    Prénom:<input
+      id="00N2p000008ZAh3"
+      maxlength="80"
+      name="00N2p000008ZAh3"
+      size="20"
+      type="text"
+      required
+    /><br />
+
+    <label for="email">Adresse mail</label
+    ><input
+      id="email"
+      maxlength="80"
+      name="email"
+      size="20"
+      type="email"
+      required
+      pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+    /><br />
+
+    Entreprise:<input
+      id="00N2p000008ZAgu"
+      maxlength="255"
+      name="00N2p000008ZAgu"
+      size="20"
+      type="text"
+      required
+    /><br />
+
+    Quelle est votre Fonction ?<select
+      id="00N2p000008ZAgv"
+      name="00N2p000008ZAgv"
+      required
+      title="Ce champs est obligatoire"
+    >
+      <option>--------</option>
+      <option>Directeur d'agence</option>
+      <option>Directeur opérationnel</option>
+      <option>Directeur de programme</option>
+      <option>Directeur Technique national</option>
+      <option>Directeur Technique régional</option>
+      <option>Directeur des études</option>
+      <option>Responsable d'achats</option>
+      <option>Responsable Technique</option>
+      <option>Architecte</option>
+      <option>Economiste</option>
+      <option>AMO</option>
+      <option>Autre</option></select
+    ><br />
+
+    <label for="phone">Téléphone</label>
+
+    <input
+      id="phone"
+      maxlength="40"
+      name="phone"
+      size="20"
+      type="tel"
+      required
+    /><br />
+
+    Date rendez-vous:<span class="dateInput dateOnlyInput">
+      <input
+        id="00N2p000008ZAgt"
+        name="00N2p000008ZAgt"
+        size="12"
+        type="text"
+        required /></span
+    ><br />
+
+    Plage horaire:<select
+      id="00N2p000008ZAh2"
+      name="00N2p000008ZAh2"
+      title="Plage horaire"
+      required
+    >
+      <option value="">--None--</option>
+      <option value="8h00 – 9h00">8h00 – 9h00</option>
+      <option value="9h00 – 10h00">9h00 – 10h00</option>
+      <option value="10h00 – 11h00">10h00 – 11h00</option>
+      <option value="11h00 – 12h00">11h00 – 12h00</option>
+      <option value="12h00 – 13h00">12h00 – 13h00</option>
+      <option value="13h00 – 14h00">13h00 – 14h00</option>
+      <option value="14h00 – 15h00">14h00 – 15h00</option>
+      <option value="15h00 – 16h00">15h00 – 16h00</option>
+      <option value="16h00 – 17h00">16h00 – 17h00</option>
+      <option value="17h00 – 18h00">17h00 – 18h00</option>
+      <option value="18h00 – 19h00">18h00 – 19h00</option>
+    </select>
+    <p>
+      <input type="checkbox" name="terms" /> En remplissant ce formulaire,
+      j’accepte que mes informations personnelles soient utilisées par Orvéa et
+      ses filiales afin de me recontacter.
+    </p>
+    <div
+      class="g-recaptcha"
+      data-sitekey="6LfJJMAaAAAAANxK50C01WnMKXBjAjnuPyOOgYRs"
+      data-callback="enableBtn"
+    ></div>
+    <input type="submit" value="Prendre un rendez-vous" id="Envoyer" disabled />
+  </form>
+</body>
