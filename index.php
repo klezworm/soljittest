@@ -6,8 +6,8 @@
 </head>
 <body>
     <ul class="list-group">
-<li><a href="1.Sandbox.html">Sandbox.</a></li>
-<li><a href="2.Production.html">Production.</a></li>
+<li><a href="Sandbox.html">Sandbox.</a></li>
+<li><a href="Production.html">Production.</a></li>
 
 </ul>
 </body>
