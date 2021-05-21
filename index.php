@@ -6,19 +6,9 @@
 </head>
 <body>
     <ul class="list-group">
-<li><a href="1.Simuler le budget.html">Simuler le budget.</a></li>
-<li><a href="2.Télécharger la plaquette commerciale.html">Télécharger la plaquette commerciale.</a></li>
-<li><a href="3.Prendre un rendez-vous.html">Prendre un rendrez-vous.</a></li>
-<li><a href="4.Obtenir un devis.html">Obtenir un devis.</a></li>
-<li><a href="5.Demande de prestation.html">Demande de prestation.</a></li>
-<li><a href="6.Newsletters.html">Newsletters.</a></li>
-<li><a href="7.invisible reCAPTCHA.html">7.invisible reCAPTCHA.</a></li>
-<li><a href="8.Simuler le budget (prod).html">8.Simuler le budget (prod).</a></li>
-<li><a href="9.Télécharger la plaquette commerciale(prod).html">9.Télécharger la plaquette commerciale(prod).</a></li>
-<li><a href="10.Prendre un rendez-vous(prod).html">10.Prendre un rendez-vous(prod).</a></li>
-<li><a href="11.Obtenir un devis.(prod).html">11.Obtenir un devis.(prod).</a></li>
-<li><a href="12.Demande de prestation(prod).html">12.Demande de prestation(prod).</a></li>
-<li><a href="13.Newsletters(prod).html">13.Newsletters(prod).</a></li>
+<li><a href="1.Sandbox.html">Sandbox.</a></li>
+<li><a href="2.Production.html">Production.</a></li>
+
 </ul>
 </body>
 </html>
