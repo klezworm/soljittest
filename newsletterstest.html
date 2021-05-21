@@ -10,7 +10,7 @@
 <script>
  function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
  function enableBtn() {
-      document.getElementById("Envoyer").disabled = false;
+      document.getElementById("btn-Newsletters").disabled = false;
     }
 </script>
 
@@ -37,6 +37,6 @@
 <input type="hidden"  id="external" name="external" value="1" /><br>
 
 <div class="g-recaptcha" data-sitekey="6LfJJMAaAAAAANxK50C01WnMKXBjAjnuPyOOgYRs" data-callback="enableBtn"></div><br>
-<input type="submit" name="S'abonner aux Newsletters" disabled>
+<input type="btn-Newsletters" name="S'abonner aux Newsletters" disabled>
 
 </form>
