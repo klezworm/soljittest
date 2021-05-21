@@ -1,0 +1,130 @@
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
+<head>
+  <script src="https://www.google.com/recaptcha/api.js?hl=fr"></script>
+  <script>
+    function timestamp() {
+      var response = document.getElementById("g-recaptcha-response");
+      if (response == null || response.value.trim() == "") {
+        var elems = JSON.parse(
+          document.getElementsByName("captcha_settings")[0].value
+        );
+        elems["ts"] = JSON.stringify(new Date().getTime());
+        document.getElementsByName("captcha_settings")[0].value =
+          JSON.stringify(elems);
+      }
+    }
+    setInterval(timestamp, 500);
+    function enableBtn() {
+      document.getElementById("Envoyer").disabled = false;
+    }
+    function checkForm(form) {
+      if (!form.terms.checked) {
+        alert("Veuillez accepter les conditions d'utilisation !");
+        form.terms.focus();
+        return false;
+      }
+      return true;
+    }
+  </script>
+</head>
+
+<body>
+  <form
+    lang="fr"
+    action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8"
+    method="POST"
+    onsubmit="return checkForm(this);"
+  >
+    <input
+      type="hidden"
+      name="captcha_settings"
+      value='{"keyname":"reCAPTCHAV2","fallback":"true","orgId":"00D2p0000013f6Y","ts":""}'
+    />
+    <!-- <input type="hidden" name="debug" value="1" /> -->
+    <!-- <input type="hidden" name="debugEmail" value="ameraga@orvea.io" /> -->
+    <input type="hidden" name="orgid" value="00D2p0000013f6Y" />
+    <input type="hidden" name="retURL" value="http://www.orvea.io" />
+    <input type="hidden" name="recordType" value="0122p000000pMERAA2" />
+    Nom:<input
+      id="00N2p000008ZAgw"
+      maxlength="80"
+      name="00N2p000008ZAgw"
+      size="20"
+      type="text"
+      required
+    /><br />
+
+    Prénom:<input
+      id="00N2p000008ZAh3"
+      maxlength="80"
+      name="00N2p000008ZAh3"
+      size="20"
+      type="text"
+      required
+    /><br />
+
+    <label for="email">Adresse mail</label
+    ><input
+      id="email"
+      maxlength="80"
+      name="email"
+      size="20"
+      type="email"
+      required
+      pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+    /><br />
+
+    Entreprise:<input
+      id="00N2p000008ZAgu"
+      maxlength="255"
+      name="00N2p000008ZAgu"
+      size="20"
+      type="text"
+      required
+    /><br />
+
+    Quelle est votre Fonction ?<input
+      id="00N2p000008ZAgv"
+      maxlength="80"
+      name="00N2p000008ZAgv"
+      size="20"
+      type="text"
+      required
+    /><br />
+
+    <label for="phone">Téléphone</label>
+
+    <input id="phone" maxlength="40" name="phone" size="20" type="tel" required/><br />
+    Prestation demandée:<select
+      id="00N2p000008ZAh4"
+      name="00N2p000008ZAh4"
+      title="Prestation demandée"
+      required
+    >
+      <option value="">--None--</option>
+      <option value="Gestion des déchets de chantier">
+        Gestion des déchets de chantier
+      </option>
+      <option value="Sécurité / gardiennage">Sécurité / gardiennage</option>
+      <option value="Nettoyage de chantier">
+        Nettoyage de chantier
+      </option></select
+    ><br />
+    <p>
+      <input type="checkbox" name="terms" /> En remplissant ce formulaire,
+      j’accepte que mes informations personnelles soient utilisées par Orvéa et
+      ses filiales afin de me recontacter.
+    </p>
+    <div
+      class="g-recaptcha"
+      data-sitekey="6LfJJMAaAAAAANxK50C01WnMKXBjAjnuPyOOgYRs"
+      data-callback="enableBtn"
+    ></div>
+    <input
+      type="submit"
+      value="Demander une prestation"
+      id="Envoyer"
+      disabled
+    />
+  </form>
+</body>
