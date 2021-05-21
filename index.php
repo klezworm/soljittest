@@ -16,7 +16,7 @@
 <li><a href="8.Simuler le budget (prod).html">8.Simuler le budget (prod).</a></li>
 <li><a href="9.Télécharger la plaquette commerciale(prod).html">9.Télécharger la plaquette commerciale(prod).</a></li>
 <li><a href="10.Prendre un rendez-vous(prod).html">10.Prendre un rendez-vous(prod).</a></li>
-<li><a href="11.Prendre un rendez-vous(prod).html">11.Prendre un rendez-vous(prod).</a></li>
+<li><a href="11.Obtenir un devis.(prod).html">11.Obtenir un devis.(prod).</a></li>
 </ul>
 </body>
 </html>
