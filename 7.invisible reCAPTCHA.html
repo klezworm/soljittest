@@ -4,29 +4,40 @@
 <!--  character set of your HTML page.                                        -->
 <!--  ----------------------------------------------------------------------  -->
 
-<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
+<meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
- function onSubmit(token) {
-         document.getElementById("demo-form").submit();
-       }</script>
+  function onSubmit(token) {
+    document.getElementById("demo-form").submit();
+  }
+</script>
+form
+  id="demo-form"
+  action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8"
+  method="POST"
+>
+  <input type="hidden" name="orgid" value="00D2p0000013f6Y" />
+  <input type="hidden" name="retURL" value="https://www.orvea.io" />
+  <input type="hidden" name="recordType" value="0122p000000pMESAA2" />
 
-<!--  ----------------------------------------------------------------------  -->
-<!--  NOTE: Please add the following <FORM> element to your page.             -->
-<!--  ----------------------------------------------------------------------  -->
+  <label for="email">Adresse mail</label
+  ><input
+    id="email"
+    maxlength="80"
+    name="email"
+    size="20"
+    type="email"
+    required
+    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+  /><br />
 
-<form id="demo-form" action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8" method="POST">
+  <input type="hidden" id="external" name="external" value="1" /><br />
 
-
-<input type=hidden name="orgid" value="00D2p0000013f6Y">
-<input type=hidden name="retURL" value="https://www.orvea.io">
-
-
-<label for="email">Email</label><input  id="email" maxlength="80" name="email" size="20" type="text" /><br>
-
-<input type="hidden"  id="external" name="external" value="1" /><br>
-
- <button class="g-recaptcha" data-sitekey="6LenP84aAAAAANyOv1qi7NXr-_-h8wXBiKdNbzU_" data-callback='onSubmit'>Submit</button>
-
-
+  <button
+    class="g-recaptcha"
+    data-sitekey="6LenP84aAAAAANyOv1qi7NXr-_-h8wXBiKdNbzU_"
+    data-callback="onSubmit"
+  >
+    Submit
+  </button>
 </form>
