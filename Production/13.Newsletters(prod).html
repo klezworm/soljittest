@@ -1,62 +1,35 @@
 <meta http-equiv="Content-type" content="text/html; charset=UTF-8" />
-<head>
-  <script src="https://www.google.com/recaptcha/api.js"></script>
-  <script>
-    function timestamp() {
-      var response = document.getElementById("g-recaptcha-response");
-      if (response == null || response.value.trim() == "") {
-        var elems = JSON.parse(
-          document.getElementsByName("captcha_settings")[0].value
-        );
-        elems["ts"] = JSON.stringify(new Date().getTime());
-        document.getElementsByName("captcha_settings")[0].value =
-          JSON.stringify(elems);
-      }
-    }
-    setInterval(timestamp, 500);
-    function enableBtn() {
-      document.getElementById("btn_Newsletters").disabled = false;
-    }
-  </script>
-</head>
-<title>Newsletters</title>
-<body>
-  <form
-    action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8"
-    method="POST"
+<script src="https://www.google.com/recaptcha/api.js"></script>
+<script>
+  function onSubmit(token) {
+    document.getElementById("demo-form").submit();
+  }
+</script>
+<form
+  id="demo-form"
+  action="https://webto.salesforce.com/servlet/servlet.WebToCase?encoding=UTF-8"
+  method="POST"
+>
+  <input type="hidden" name="orgid" value="00D2p0000013f6Y" />
+  <input type="hidden" name="retURL" value="https://www.orvea.io" />
+  <input type="hidden" name="recordType" value="0122p000000pMESAA2" />
+
+  <label for="email">Adresse mail</label
+  ><input
+    id="email"
+    maxlength="80"
+    name="email"
+    size="20"
+    type="email"
+    required
+    pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
+  /><br />
+  <input type="hidden" id="external" name="external" value="1" /><br />
+  <button
+    class="g-recaptcha"
+    data-sitekey="6LenP84aAAAAANyOv1qi7NXr-_-h8wXBiKdNbzU_"
+    data-callback="onSubmit"
   >
-    <input
-      type="hidden"
-      name="captcha_settings"
-      value='{"keyname":"reCAPTCHAV2","fallback":"true","orgId":"00D2p0000013f6Y","ts":""}'
-    />
-    <input type="hidden" name="orgid" value="00D2p0000013f6Y" />
-    <input type="hidden" name="retURL" value="http://www.orvea.io" />
-    <input type="hidden" name="recordType" value="0122p000000pMESAA2" />
-    <label for="email">Adresse mail</label
-    ><input
-      id="email"
-      maxlength="80"
-      name="email"
-      size="20"
-      type="email"
-      required
-      pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"
-    /><br />
-
-    <input type="hidden" id="external" name="external" value="1" /><br />
-
-    <div
-      class="g-recaptcha"
-      data-sitekey="6LfJJMAaAAAAANxK50C01WnMKXBjAjnuPyOOgYRs"
-      data-callback="enableBtn"
-    ></div>
-    <br />
-    <input
-      type="submit"
-      value="S'abonner aux Newsletters"
-      id="btn_Newsletters"
-      disabled
-    />
-  </form>
-</body>
+    S'abonner aux Newsletters
+  </button>
+</form>
