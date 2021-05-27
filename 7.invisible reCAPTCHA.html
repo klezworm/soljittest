@@ -7,8 +7,9 @@
 <META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=UTF-8">
 <script src="https://www.google.com/recaptcha/api.js"></script>
 <script>
- function timestamp() { var response = document.getElementById("g-recaptcha-response"); if (response == null || response.value.trim() == "") {var elems = JSON.parse(document.getElementsByName("captcha_settings")[0].value);elems["ts"] = JSON.stringify(new Date().getTime());document.getElementsByName("captcha_settings")[0].value = JSON.stringify(elems); } } setInterval(timestamp, 500); 
-</script>
+ function onSubmit(token) {
+         document.getElementById("demo-form").submit();
+       }</script>
 
 <!--  ----------------------------------------------------------------------  -->
 <!--  NOTE: Please add the following <FORM> element to your page.             -->
@@ -31,7 +32,7 @@
 
 <input type="hidden"  id="external" name="external" value="1" /><br>
 
-<div class="g-recaptcha" data-sitekey="6LenP84aAAAAANyOv1qi7NXr-_-h8wXBiKdNbzU_"></div><br>
+ <button class="g-recaptcha" data-sitekey="6LenP84aAAAAANyOv1qi7NXr-_-h8wXBiKdNbzU_" data-callback='onSubmit'>Submit</button>
 <input type="submit" name="submit">
 
 </form>
